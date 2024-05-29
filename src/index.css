@@ -1,0 +1,146 @@
+/* CSS Variables */
+:root {
+  --clr-primary-600: hsl(144, 50%, 20%);
+
+  --clr-neutral-100: hsl(36, 43%, 93%);
+  --clr-neutral-500: hsl(42, 39%, 85%);
+  --clr-neutral-900: hsl(126, 17%, 37%);
+
+  --ff-main: "Figtree", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 800;
+}
+
+/* CSS Reset */
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: var(--ff-main);
+  background-color: var(--clr-primary-600);
+  font-size: 1rem;
+
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.to-do-list {
+  background-color: var(--clr-neutral-500);
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  min-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  text-align: center;
+  color: var(--clr-primary-600);
+  cursor: default;
+}
+
+.to-do-list_input {
+  align-self: center;
+  width: 85%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+input[id="taskInput"] {
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-500);
+  text-align: center;
+  width: 75%;
+  border: none;
+  overflow-wrap: break-word;
+}
+input[id="taskInput"]::placeholder {
+  color: var(--clr-neutral-500);
+  opacity: 60%;
+}
+.to-do-list button {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-500);
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 25%;
+  border: none;
+}
+
+.to-do-list_tasks {
+  background-color: var(--clr-primary-600);
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.to-do-list_tasks:empty {
+  display: none;
+}
+.to-do-list_tasks__item {
+  background-color: var(--clr-neutral-500);
+  color: var(--clr-neutral-900);
+  text-align: center;
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.to-do-list_tasks li {
+  width: 80%;
+  list-style-type: none;
+  overflow-wrap: break-word;
+  cursor: default;
+}
+.to-do-list_tasks button {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-500);
+  cursor: pointer;
+  border: none;
+  width: 20%;
+}
