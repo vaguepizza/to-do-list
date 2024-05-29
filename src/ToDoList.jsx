@@ -5,7 +5,7 @@ const ToDoList = () => {
     const [tasks, setTasks] = useState(() => {
         const saved = localStorage.getItem("taskList");
         const initialList = JSON.parse(saved);
-        return initialList || [];
+        return initialList || ["Watch the race replay"];
     });
 
     const handleTaskAdd = () => {
